@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>mini ejercicio</title>
+</head>
+<body>
+  <p id="parrafo" onclick="setFont()">Holaaa</p>
+  <button type="button" name="button" onclick="add()">mi nombre</button>
+  <ul id="list" onclick="add_color()">
+    <li>1</li>
+    <li>2</li>
+  </ul>
+  <button type="button" name="button" onclick="grande()">+ grande</button>
+  <button type="button" name="button" onclick="achicar()">+ chico</button>
+  <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque assumenda tempore nulla non, reiciendis magni quidem inventore impedit laboriosam deleniti id rerum nemo provident ullam quasi veniam quas voluptate. Consequuntur!</p>
+  <div class="input-group mb-3" >
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Hora</span>
+    </div>
+    <input type="text" id="hora" class="form-control" placeholder="Hora" aria-label="Username" aria-describedby="basic-addon1">
+    <button type="button" name="button" onclick="saludo()">ingresar</button>
+  </div>
+  <script>
+    function saludo(){
+      var hora = document.getElementById('hora').value;
+      if(hora > 6 && hora < 12){
+        alert("Buenos días");
+      } else if (hora >= 12 && hora < 20) {
+        alert("Buenas Tardes");
+      } else {
+        alert("Buenas noches");
+      }
+    }
+    var size = 10
+    var p1 = document.getElementById('p1');
+    function grande(){
+      size += 10;
+      p1.style.fontSize = size.toString() + 'px'
+    };
+    function achicar(){
+      if(size >=20){
+
+        size -= 10;
+        p1.style.fontSize = size.toString() + 'px';
+      }else{
+        alert('no se puede seguir achicando');
+      }
+    };
+    function setFont(){
+      var parrafo = document.getElementById('parrafo');
+      if (parrafo.style.fontWeight == 'normal' || parrafo.style.fontWeight == 0 ){
+
+        parrafo.style.fontWeight = 'bold';
+      } else {
+
+        parrafo.style.fontWeight = 'normal';
+      }
+    }
+
+    function add() {
+      var nombre = document.createElement('p');
+      nombre.body.appendChild('Daniel');
+      list = nombre.getElementById('list');
+      list.appendChild(nombre);
+    };
+    function add_color() {
+      if(next_number > 4){
+       item.style.color = 'red';
+     };
+      next_number += 1;
+      var item = document.createElement('li');
+      var contenido = document.createTextNode(next_number);
+      item.appendChild(contenido);
+      list = document.getElementById('list');
+      list.appendChild(item);
+      next_number += 1;
+    };
+  </script>
+
+</body>
+</html>
